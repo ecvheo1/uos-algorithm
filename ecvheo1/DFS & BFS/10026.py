@@ -14,26 +14,6 @@ def bfsNo(a, b, visitedNo):
             if (0 <= nx < n) and (0 <= ny < n) and (visitedNo[nx][ny] == False) and (paint[nx][ny] == paint[x][y]):
                 visitedNo[nx][ny] = True
                 q.append((nx, ny))
-    
-def bfsYes(a, b, visitedNo):
-    q = deque()
-    q.append((a, b))
-    visitedYes[a][b] = True
-    if paint[a][b] == 'R' or paint[a][b] == 'G':
-        flag = 1
-    else:
-        flag = 0
-    while q:
-        x, y = q.popleft()
-        for i in range(4):
-            nx = x + dx[i]
-            ny = y + dy[i]
-            if (0 <= nx < n) and (0 <= ny < n) and (visitedYes[nx][ny] == False) and (flag == 1) and (paint[nx][ny] == 'R' or paint[nx][ny] == 'G'):
-                visitedYes[nx][ny] = True
-                q.append((nx, ny))
-            if (0 <= nx < n) and (0 <= ny < n) and (visitedYes[nx][ny] == False) and (flag == 0) and (paint[nx][ny] == paint[x][y]):
-                visitedYes[nx][ny] = True
-                q.append((nx, ny))
 
 n = int(sys.stdin.readline())
 paint = []
