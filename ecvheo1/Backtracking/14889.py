@@ -34,7 +34,7 @@ for i in range(n):
 
 startTeam = [0] * (n//2)
 visited = [False] * n
-minValue = 10000000000
+minValue = 1e9
 
 dfs(0, 0)
 print(minValue)
